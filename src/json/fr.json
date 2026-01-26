@@ -1,0 +1,24 @@
+{
+    "page_selector":{
+        "home":"Accueil",
+        "cv": "Curriculum Vitae",
+        "projects": "Projets",
+        "concerts": "Concerts",
+        "recordings": "Enregistrements",
+        "medias": "Medias",
+        "press": "Presse",
+        "contact": "Contact"
+    },
+    "home": {
+        "title": "Accueil",
+        "intro": "Bienvenue sur mon site"
+    },
+    "cv": {
+        "title": "Mon CV",
+        "summary": "Bando"
+    },
+    "projects": {
+        "title": "À propos",
+        "text": "Projets"
+    }
+}

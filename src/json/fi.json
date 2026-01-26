@@ -1,0 +1,24 @@
+{
+    "page_selector":{
+        "home":"Kotisivu",
+        "cv": "Curriculum Vitae",
+        "projects": "Projects",
+        "concerts": "Concerts",
+        "recordings": "Recordings",
+        "medias": "Medias",
+        "press": "Press",
+        "contact": "Contact"
+    },
+    "home": {
+        "title": "Kotisivu",
+        "intro": "Hyva balalblajjaddfd"
+    },
+    "cv": {
+        "title": "Minun CV",
+        "summary": "Bando"
+    },
+    "projects": {
+        "title": "Fi",
+        "text": "Projecti"
+    }
+}

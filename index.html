@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-light">
+
+    <header id="header">
+        <div id="second-header">        
+            <div class="lang-switch">
+                <button onclick="setLanguage('fr')" aria-label="Français">
+                    <img src="src/images/fr.png" alt="Français" data-lang="fr">
+                </button>
+
+                <button onclick="setLanguage('en')" aria-label="English">
+                    <img src="src/images/en.png" alt="English" data-lang="en">
+                </button>
+
+                <button onclick="setLanguage('fi')" aria-label="Suomi">
+                    <img src="src/images/fi.png" alt="Suomi" data-lang="fi">
+                </button>
+            </div>
+            <div>
+                <button id="theme-toggle" aria-label="Theme toogle"></button>
+            </div>
+
+        </div>
+
+        <nav id="page-selection">
+            <div class="page-selector" data-page="home" data-i18n="page_selector.home" onclick="loadPage('home')"></div>
+            <div class="nav-panel">
+                <div class="page-selector" data-page="cv" data-i18n="page_selector.cv" onclick="loadPage('cv')">CV </div>
+                <div class="page-selector" data-page="projects" data-i18n="page_selector.projects" onclick="loadPage('projects')"> projects</div>
+                <div class="page-selector" data-page="concerts" data-i18n="page_selector.concerts" > concerts</div>
+                <div class="page-selector" data-page="recordings" data-i18n="page_selector.recordings">recordings </div>
+                <div class="page-selector" data-page="medias" data-i18n="page_selector.medias">medias </div>
+                <div class="page-selector" data-page="press" data-i18n="page_selector.press">press </div>
+                <div class="page-selector" data-page="contact" data-i18n="page_selector.contact">contact </div>
+            </div>
+            <button class="page-selector-toggle-display-button" id="toogle-nav" onclick="toogleNavVisibility()">
+            <span class="arrow">▲</span>
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- Page content -->
+    <main  id="page-content" > 
+        <!-- home -->
+        <section id="home" class="page">
+            <!-- <h1 data-i18n="home.title"></h1> -->
+            <div class="big-text" >Kristina</div> 
+            <div class="big-text" >Kuusisto</div>
+            BANDONEON
+            <img
+                src="src/images/pp.jpg"
+
+                sizes="
+                    (max-width: 768px) 90vw,
+                    (max-width: 1200px) 70vw,
+                    800px
+                "
+                alt="Kristina Kuusisto"
+                >
+
+        </section>
+
+        <!-- cv -->
+        <section id="cv" class="page">
+            <div>Coucou cv</div>
+            <h1 data-i18n="cv.title"></h1>
+            <p data-i18n="cv.summary"></p>
+        </section>
+
+        <!-- cv -->
+        <section id="projects" class="page">
+            <div>Coucou proj</div>
+            <h1 data-i18n="projects.title"></h1>
+            <p data-i18n="projects.text"></p>
+        </section>
+
+
+    </main>
+
+    <footer> @2025 Kristina Kuusisto Website. Contact : kristinakuusisto@orange.fr
+
+
+
+    </footer>
+    <script src="script.js"></script>
+
+
+</body>
+</html>

@@ -46,26 +46,29 @@
 
     </header>
 
-
+                <!-- sizes="
+                    (max-heigth: 768px) 90vw,
+                    (max-width: 1200px) 70vw,
+                    800px
+                " -->
     <!-- Page content -->
     <main  id="page-content" > 
         <!-- home -->
         <section id="home" class="page">
+            <div id="home-content">
             <!-- <h1 data-i18n="home.title"></h1> -->
-            <div class="big-text" >Kristina</div> 
-            <div class="big-text" >Kuusisto</div>
-            BANDONEON
-            <img
-                src="src/images/pp.jpg"
-
-                sizes="
-                    (max-width: 768px) 90vw,
-                    (max-width: 1200px) 70vw,
-                    800px
-                "
-                alt="Kristina Kuusisto"
-                >
-
+                    <img
+                        id="home-pp"
+                        src="src/images/pp.jpg"
+                        style="width: clamp(0px, 70%, 460px);"
+                        alt="Kristina Kuusisto"
+                        sizes=""
+                        >
+                    <div class="big-text" >Kristina</div> 
+                    <div class="big-text" >Kuusisto</div>
+                    BANDONEON
+                    <div data-i18n="home.desc"> </div>
+            </div>
         </section>
 
         <!-- cv -->
@@ -85,7 +88,7 @@
 
     </main>
 
-    <footer> @2025 Kristina Kuusisto Website. Contact : kristinakuusisto@orange.fr
+    <footer> @2026 Kristina Kuusisto Website. Contact : kristinakuusisto@orange.fr
 
 
 

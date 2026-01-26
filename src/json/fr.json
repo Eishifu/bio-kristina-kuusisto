@@ -11,7 +11,8 @@
     },
     "home": {
         "title": "Accueil",
-        "intro": "Bienvenue sur mon site"
+        "intro": "Bienvenue sur mon site",
+        "desc": " Musicienne internationale de Bandonéon"
     },
     "cv": {
         "title": "Mon CV",

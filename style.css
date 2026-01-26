@@ -12,6 +12,7 @@
     --nav-btn-bg-hover: #2a2a2a;
     --nav-btn-text: #ffffff;
     --nav-btn-text-active: var(--nav-btn-text);
+    --home-img-border : var(--general-accent);
     --footer-bg : var(--header-bg);
 }
 
@@ -280,9 +281,16 @@ body.theme-dark #theme-toggle::before {
     flex: 1;
 }
 
-#home {
+#home-content {
     display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
     
+}
+
+#home-pp {
+    border: 2px solid var(--home-img-border);
 }
 /* footer */
 
@@ -293,7 +301,7 @@ footer {
     justify-content: center;
     align-items: center;
     font-size: 15px;
-    padding: 4px;
+    padding: 8px;
 }
 
 
@@ -317,6 +325,10 @@ footer {
     }
     #toogle-nav {
         display: none;
+    }
+
+    #home-content {
+        flex-direction: row;
     }
 
 }

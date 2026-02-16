@@ -1,100 +1,328 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KK - Portfolio</title>
+  <meta name="description" content="Curriculum Vitae, Presse, Media, Enregistrements, Projets, Concerts, Contact" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
-<body class="theme-light">
+<body>
 
-    <header id="header">
-        <div id="second-header">        
-            <div class="lang-switch">
-                <button onclick="setLanguage('fr')" aria-label="Français">
-                    <img src="src/images/fr.png" alt="Français" data-lang="fr">
-                </button>
+  <!-- ===== Mobile Header ===== -->
+  <header class="mobile-header">
+    <a href="#cv" class="logo" data-logo>KK</a>
+    <button id="hamburger" class="hamburger" aria-label="Ouvrir le menu">
+      <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </header>
 
-                <button onclick="setLanguage('en')" aria-label="English">
-                    <img src="src/images/en.png" alt="English" data-lang="en">
-                </button>
+  <!-- ===== Mobile Overlay ===== -->
+  <div id="mobile-overlay" class="mobile-overlay"></div>
 
-                <button onclick="setLanguage('fi')" aria-label="Suomi">
-                    <img src="src/images/fi.png" alt="Suomi" data-lang="fi">
-                </button>
-            </div>
-            <div>
-                <button id="theme-toggle" aria-label="Theme toogle"></button>
-            </div>
+  <!-- ===== Mobile Drawer ===== -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <nav>
+      <a href="#cv" data-nav-link>Curriculum Vitae</a>
+      <a href="#presse" data-nav-link>Presse</a>
+      <a href="#media" data-nav-link>Media</a>
+      <a href="#enregistrements" data-nav-link>Enregistrements</a>
+      <a href="#projets" data-nav-link>Projets</a>
+      <a href="#concerts" data-nav-link>Concerts</a>
+      <a href="#contact" data-nav-link>Contact</a>
+    </nav>
+  </div>
 
+  <!-- ===== Desktop Sidebar ===== -->
+  <aside class="sidebar">
+    <a href="#cv" class="logo" data-logo>KK</a>
+    <nav>
+      <a href="#cv" data-nav-link>Curriculum Vitae</a>
+      <a href="#presse" data-nav-link>Presse</a>
+      <a href="#media" data-nav-link>Media</a>
+      <a href="#enregistrements" data-nav-link>Enregistrements</a>
+      <a href="#projets" data-nav-link>Projets</a>
+      <a href="#concerts" data-nav-link>Concerts</a>
+      <a href="#contact" data-nav-link>Contact</a>
+    </nav>
+  </aside>
+
+  <!-- ===== Main Content ===== -->
+  <div class="main-content">
+    <div class="inner">
+
+      <!-- ===== CV ===== -->
+      <section id="cv">
+        <h1>Curriculum Vitae</h1>
+
+        <div class="cv-block">
+          <h2>Formation</h2>
+          <div class="cv-entry">
+            <p class="title">Titre du diplome</p>
+            <p class="subtitle">Etablissement - XXXX</p>
+          </div>
+          <div class="cv-entry">
+            <p class="title">Titre du diplome</p>
+            <p class="subtitle">Etablissement - XXXX</p>
+          </div>
+          <div class="cv-entry">
+            <p class="title">Titre du diplome</p>
+            <p class="subtitle">Etablissement - XXXX</p>
+          </div>
         </div>
 
-        <nav id="page-selection">
-            <div class="page-selector" data-page="home" data-i18n="page_selector.home" onclick="loadPage('home')"></div>
-            <div class="nav-panel">
-                <div class="page-selector" data-page="cv" data-i18n="page_selector.cv" onclick="loadPage('cv')">CV </div>
-                <div class="page-selector" data-page="projects" data-i18n="page_selector.projects" onclick="loadPage('projects')"> projects</div>
-                <div class="page-selector" data-page="concerts" data-i18n="page_selector.concerts" > concerts</div>
-                <div class="page-selector" data-page="recordings" data-i18n="page_selector.recordings">recordings </div>
-                <div class="page-selector" data-page="medias" data-i18n="page_selector.medias">medias </div>
-                <div class="page-selector" data-page="press" data-i18n="page_selector.press">press </div>
-                <div class="page-selector" data-page="contact" data-i18n="page_selector.contact">contact </div>
+        <div class="cv-block">
+          <h2>Experience Professionnelle</h2>
+          <div class="cv-entry">
+            <p class="title">Titre du poste</p>
+            <p class="subtitle">Lieu / Organisation - XXXX</p>
+            <p class="description">Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam.</p>
+          </div>
+          <div class="cv-entry">
+            <p class="title">Titre du poste</p>
+            <p class="subtitle">Lieu / Organisation - XXXX</p>
+            <p class="description">Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam.</p>
+          </div>
+          <div class="cv-entry">
+            <p class="title">Titre du poste</p>
+            <p class="subtitle">Lieu / Organisation - XXXX</p>
+            <p class="description">Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam.</p>
+          </div>
+          <div class="cv-entry">
+            <p class="title">Titre du poste</p>
+            <p class="subtitle">Lieu / Organisation - XXXX</p>
+            <p class="description">Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam.</p>
+          </div>
+        </div>
+
+        <div class="cv-block">
+          <h2>Competences</h2>
+          <div class="skills-list">
+            <span class="skill-tag">Competence 1</span>
+            <span class="skill-tag">Competence 2</span>
+            <span class="skill-tag">Competence 3</span>
+            <span class="skill-tag">Competence 4</span>
+            <span class="skill-tag">Competence 5</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Presse ===== -->
+      <section id="presse">
+        <h1>Presse</h1>
+        <article class="presse-article">
+          <h2>Titre Article</h2>
+          <time>9 janv. XXXX</time>
+          <p>Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam. Neque enim decebat neque aetas illa postulabat neque, id quod animadvertere poteratis, pudor patiebatur optimi adulescentis in tali illum oratione versari. Vellem aliquis ex vobis robustioribus hunc male dicendi locum suscepisset; aliquanto liberius et fortius et magis more nostro refutaremus istam male dicendi licentiam. Tecum, Atratine, agam lenius, quod et pudor tuus moderatur orationi meae et meum erga te parentemque tuum beneficium tueri debeo.</p>
+        </article>
+        <article class="presse-article">
+          <h2>Titre Article</h2>
+          <time>9 janv. XXXX</time>
+          <p>Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam. Neque enim decebat neque aetas illa postulabat neque, id quod animadvertere poteratis, pudor patiebatur optimi adulescentis in tali illum oratione versari. Vellem aliquis ex vobis robustioribus hunc male dicendi locum suscepisset; aliquanto liberius et fortius et magis more nostro refutaremus istam male dicendi licentiam. Tecum, Atratine, agam lenius, quod et pudor tuus moderatur orationi meae et meum erga te parentemque tuum beneficium tueri debeo.</p>
+        </article>
+        <article class="presse-article">
+          <h2>Titre Article</h2>
+          <time>9 janv. XXXX</time>
+          <p>Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam. Neque enim decebat neque aetas illa postulabat neque, id quod animadvertere poteratis, pudor patiebatur optimi adulescentis in tali illum oratione versari. Vellem aliquis ex vobis robustioribus hunc male dicendi locum suscepisset; aliquanto liberius et fortius et magis more nostro refutaremus istam male dicendi licentiam. Tecum, Atratine, agam lenius, quod et pudor tuus moderatur orationi meae et meum erga te parentemque tuum beneficium tueri debeo.</p>
+        </article>
+        <article class="presse-article">
+          <h2>Titre Article</h2>
+          <time>9 janv. XXXX</time>
+          <p>Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam. Neque enim decebat neque aetas illa postulabat neque, id quod animadvertere poteratis, pudor patiebatur optimi adulescentis in tali illum oratione versari. Vellem aliquis ex vobis robustioribus hunc male dicendi locum suscepisset; aliquanto liberius et fortius et magis more nostro refutaremus istam male dicendi licentiam. Tecum, Atratine, agam lenius, quod et pudor tuus moderatur orationi meae et meum erga te parentemque tuum beneficium tueri debeo.</p>
+        </article>
+        <article class="presse-article">
+          <h2>Titre Article</h2>
+          <time>9 janv. XXXX</time>
+          <p>Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam. Neque enim decebat neque aetas illa postulabat neque, id quod animadvertere poteratis, pudor patiebatur optimi adulescentis in tali illum oratione versari. Vellem aliquis ex vobis robustioribus hunc male dicendi locum suscepisset; aliquanto liberius et fortius et magis more nostro refutaremus istam male dicendi licentiam. Tecum, Atratine, agam lenius, quod et pudor tuus moderatur orationi meae et meum erga te parentemque tuum beneficium tueri debeo.</p>
+        </article>
+        <article class="presse-article">
+          <h2>Titre Article</h2>
+          <time>9 janv. XXXX</time>
+          <p>Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam. Neque enim decebat neque aetas illa postulabat neque, id quod animadvertere poteratis, pudor patiebatur optimi adulescentis in tali illum oratione versari. Vellem aliquis ex vobis robustioribus hunc male dicendi locum suscepisset; aliquanto liberius et fortius et magis more nostro refutaremus istam male dicendi licentiam. Tecum, Atratine, agam lenius, quod et pudor tuus moderatur orationi meae et meum erga te parentemque tuum beneficium tueri debeo.</p>
+        </article>
+        <article class="presse-article">
+          <h2>Titre Article</h2>
+          <time>9 janv. XXXX</time>
+          <p>Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam. Neque enim decebat neque aetas illa postulabat neque, id quod animadvertere poteratis, pudor patiebatur optimi adulescentis in tali illum oratione versari. Vellem aliquis ex vobis robustioribus hunc male dicendi locum suscepisset; aliquanto liberius et fortius et magis more nostro refutaremus istam male dicendi licentiam. Tecum, Atratine, agam lenius, quod et pudor tuus moderatur orationi meae et meum erga te parentemque tuum beneficium tueri debeo.</p>
+        </article>
+        <article class="presse-article">
+          <h2>Titre Article</h2>
+          <time>9 janv. XXXX</time>
+          <p>Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam. Neque enim decebat neque aetas illa postulabat neque, id quod animadvertere poteratis, pudor patiebatur optimi adulescentis in tali illum oratione versari. Vellem aliquis ex vobis robustioribus hunc male dicendi locum suscepisset; aliquanto liberius et fortius et magis more nostro refutaremus istam male dicendi licentiam. Tecum, Atratine, agam lenius, quod et pudor tuus moderatur orationi meae et meum erga te parentemque tuum beneficium tueri debeo.</p>
+        </article>
+      </section>
+
+      <!-- ===== Media ===== -->
+      <section id="media">
+        <h1>Media</h1>
+        <div class="media-grid">
+          <div class="media-item" style="aspect-ratio: 4/3;"></div>
+          <div class="media-item" style="aspect-ratio: 1/1;"></div>
+          <div class="media-item" style="aspect-ratio: 3/4;"></div>
+          <div class="media-item" style="aspect-ratio: 3/4;"></div>
+          <div class="media-item" style="aspect-ratio: 4/3;"></div>
+          <div class="media-item" style="aspect-ratio: 1/1;"></div>
+          <div class="media-item" style="aspect-ratio: 1/1;"></div>
+          <div class="media-item" style="aspect-ratio: 3/4;"></div>
+          <div class="media-item" style="aspect-ratio: 4/3;"></div>
+        </div>
+      </section>
+
+      <!-- ===== Enregistrements ===== -->
+      <section id="enregistrements">
+        <h1>Enregistrements</h1>
+        <div class="recordings-grid">
+          <div class="recording-card"><div class="cover"></div><p class="rec-title">Titre</p><p class="rec-artist">Artistes/Groupe</p><p class="rec-date">Date</p></div>
+          <div class="recording-card"><div class="cover"></div><p class="rec-title">Titre</p><p class="rec-artist">Artistes/Groupe</p><p class="rec-date">Date</p></div>
+          <div class="recording-card"><div class="cover"></div><p class="rec-title">Titre</p><p class="rec-artist">Artistes/Groupe</p><p class="rec-date">Date</p></div>
+          <div class="recording-card"><div class="cover"></div><p class="rec-title">Titre</p><p class="rec-artist">Artistes/Groupe</p><p class="rec-date">Date</p></div>
+          <div class="recording-card"><div class="cover"></div><p class="rec-title">Titre</p><p class="rec-artist">Artistes/Groupe</p><p class="rec-date">Date</p></div>
+          <div class="recording-card"><div class="cover"></div><p class="rec-title">Titre</p><p class="rec-artist">Artistes/Groupe</p><p class="rec-date">Date</p></div>
+          <div class="recording-card"><div class="cover"></div><p class="rec-title">Titre</p><p class="rec-artist">Artistes/Groupe</p><p class="rec-date">Date</p></div>
+          <div class="recording-card"><div class="cover"></div><p class="rec-title">Titre</p><p class="rec-artist">Artistes/Groupe</p><p class="rec-date">Date</p></div>
+          <div class="recording-card"><div class="cover"></div><p class="rec-title">Titre</p><p class="rec-artist">Artistes/Groupe</p><p class="rec-date">Date</p></div>
+        </div>
+      </section>
+
+      <!-- ===== Projets ===== -->
+      <section id="projets">
+        <h1>Projets</h1>
+        <div class="projets-grid">
+          <div class="projet-card">
+            <div class="thumb"></div>
+            <h2>Titre du Projet</h2>
+            <p class="year">XXXX</p>
+            <p>Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam. Neque enim decebat neque aetas illa postulabat neque, id quod animadvertere poteratis.</p>
+          </div>
+          <div class="projet-card">
+            <div class="thumb"></div>
+            <h2>Titre du Projet</h2>
+            <p class="year">XXXX</p>
+            <p>Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam. Neque enim decebat neque aetas illa postulabat neque, id quod animadvertere poteratis.</p>
+          </div>
+          <div class="projet-card">
+            <div class="thumb"></div>
+            <h2>Titre du Projet</h2>
+            <p class="year">XXXX</p>
+            <p>Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam. Neque enim decebat neque aetas illa postulabat neque, id quod animadvertere poteratis.</p>
+          </div>
+          <div class="projet-card">
+            <div class="thumb"></div>
+            <h2>Titre du Projet</h2>
+            <p class="year">XXXX</p>
+            <p>Quam quidem partem accusationis admiratus sum et moleste tuli potissimum esse Atratino datam. Neque enim decebat neque aetas illa postulabat neque, id quod animadvertere poteratis.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Concerts ===== -->
+      <section id="concerts">
+        <h1>Concerts</h1>
+        <div class="concert-item">
+          <div>
+            <h2>Titre du Concert</h2>
+            <p class="location">Lieu du Concert</p>
+          </div>
+          <div class="date-time">
+            <p class="date">XX janv. XXXX</p>
+            <p class="time">XXhXX</p>
+          </div>
+        </div>
+        <div class="concert-item">
+          <div>
+            <h2>Titre du Concert</h2>
+            <p class="location">Lieu du Concert</p>
+          </div>
+          <div class="date-time">
+            <p class="date">XX janv. XXXX</p>
+            <p class="time">XXhXX</p>
+          </div>
+        </div>
+        <div class="concert-item">
+          <div>
+            <h2>Titre du Concert</h2>
+            <p class="location">Lieu du Concert</p>
+          </div>
+          <div class="date-time">
+            <p class="date">XX janv. XXXX</p>
+            <p class="time">XXhXX</p>
+          </div>
+        </div>
+        <div class="concert-item">
+          <div>
+            <h2>Titre du Concert</h2>
+            <p class="location">Lieu du Concert</p>
+          </div>
+          <div class="date-time">
+            <p class="date">XX janv. XXXX</p>
+            <p class="time">XXhXX</p>
+          </div>
+        </div>
+        <div class="concert-item">
+          <div>
+            <h2>Titre du Concert</h2>
+            <p class="location">Lieu du Concert</p>
+          </div>
+          <div class="date-time">
+            <p class="date">XX janv. XXXX</p>
+            <p class="time">XXhXX</p>
+          </div>
+        </div>
+        <div class="concert-item">
+          <div>
+            <h2>Titre du Concert</h2>
+            <p class="location">Lieu du Concert</p>
+          </div>
+          <div class="date-time">
+            <p class="date">XX janv. XXXX</p>
+            <p class="time">XXhXX</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Contact ===== -->
+      <section id="contact">
+        <h1>Contact</h1>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div>
+              <h2>Email</h2>
+              <p>email@placeholder.com</p>
             </div>
-            <button class="page-selector-toggle-display-button" id="toogle-nav" onclick="toogleNavVisibility()">
-            <span class="arrow">▲</span>
-            </button>
-        </nav>
-
-    </header>
-
-                <!-- sizes="
-                    (max-heigth: 768px) 90vw,
-                    (max-width: 1200px) 70vw,
-                    800px
-                " -->
-    <!-- Page content -->
-    <main  id="page-content" > 
-        <!-- home -->
-        <section id="home" class="page">
-            <div id="home-content">
-            <!-- <h1 data-i18n="home.title"></h1> -->
-                    <img
-                        id="home-pp"
-                        src="src/images/pp.jpg"
-                        style="width: clamp(0px, 70%, 460px);"
-                        alt="Kristina Kuusisto"
-                        sizes=""
-                        >
-                    <div class="big-text" >Kristina</div> 
-                    <div class="big-text" >Kuusisto</div>
-                    BANDONEON
-                    <div data-i18n="home.desc"> </div>
+            <div>
+              <h2>Telephone</h2>
+              <p>+XX X XX XX XX XX</p>
             </div>
-        </section>
+            <div>
+              <h2>Adresse</h2>
+              <p>Adresse placeholder<br />Ville, Pays</p>
+            </div>
+          </div>
+          <div class="contact-form">
+            <div>
+              <label>Nom</label>
+              <div class="input-placeholder"></div>
+            </div>
+            <div>
+              <label>Email</label>
+              <div class="input-placeholder"></div>
+            </div>
+            <div>
+              <label>Message</label>
+              <div class="textarea-placeholder"></div>
+            </div>
+            <div class="submit-placeholder"></div>
+          </div>
+        </div>
+      </section>
 
-        <!-- cv -->
-        <section id="cv" class="page">
-            <div>Coucou cv</div>
-            <h1 data-i18n="cv.title"></h1>
-            <p data-i18n="cv.summary"></p>
-        </section>
+    </div>
+  </div>
 
-        <!-- cv -->
-        <section id="projects" class="page">
-            <div>Coucou proj</div>
-            <h1 data-i18n="projects.title"></h1>
-            <p data-i18n="projects.text"></p>
-        </section>
-
-
-    </main>
-
-    <footer> @2026 Kristina Kuusisto Website. Contact : kristinakuusisto@orange.fr
-
-
-
-    </footer>
-    <script src="script.js"></script>
-
-
+  <script src="/script.js"></script>
 </body>
 </html>

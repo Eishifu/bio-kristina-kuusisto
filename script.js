@@ -1,106 +1,91 @@
-// État courant
-let currentPage = 'home';
-let translations = {};
-let navVisibility = true;
-const navPanel =  document.querySelector('.nav-panel');
-const toggleNav =  document.getElementById('toogle-nav');
-const mediaQuery = window.matchMedia('(min-width: 780px)'); // @media 
+/* =========================================
+   KK Portfolio - Vanilla JS
+   ========================================= */
 
-// Language
-async function setLanguage(lang) {
-    // retrieve translation 
-    const response = await fetch(`src/json/${lang}.json`); 
-    translations = await response.json();
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const overlay = document.getElementById("mobile-overlay");
+  const drawer = document.getElementById("mobile-drawer");
+  const hamburgerIcon = document.getElementById("hamburger-icon");
+  const closeIcon = document.getElementById("close-icon");
+  const navLinks = document.querySelectorAll("[data-nav-link]");
+  const sections = document.querySelectorAll("section[id]");
 
-    // save current language
-    localStorage.setItem("lang", lang);
-    document.documentElement.lang = lang;
+  let mobileOpen = false;
 
-    // apply language
-    applyLanguage()
-    loadPage(currentPage);
-    buttonStyleSelectedLanguage(lang)
-}
-function getTranslation(path) {
-    return path.split(".").reduce((obj, key) => {
-        return obj && obj[key];
-    }, translations);
-}
-function applyLanguage() {
-    document.querySelectorAll("[data-i18n]").forEach(element => {
-        const key = element.getAttribute("data-i18n");
-        element.textContent = getTranslation(key);
-    });
-}
-
-function buttonStyleSelectedLanguage(lang) {
-    document.querySelectorAll(".lang-switch img").forEach(p => {
-        p.classList.toggle(
-            "active",
-            p.dataset.lang === lang
-        );
-    });
-}
-
-// navi visibility
-function toogleNavVisibility() {
-    navVisibility = !navVisibility
-    navPanel.classList.toggle('closed', !navVisibility);
-    toggleNav.classList.toggle('closed', !navVisibility);
-}
-
-function updateActiveNav(page) {
-    document.querySelectorAll(".page-selector").forEach(btn => {
-        btn.classList.toggle(
-            "active",
-            btn.dataset.page === page
-        );
-    });
-}
-
-function reopenOnResize(e) {
-  if (e.matches) {
-    navVisibility = true
-    navPanel.classList.remove('closed');
-    toggleNav.classList.remove('closed');
+  /* --- Mobile menu toggle --- */
+  function toggleMobile() {
+    mobileOpen = !mobileOpen;
+    overlay.classList.toggle("open", mobileOpen);
+    drawer.classList.toggle("open", mobileOpen);
+    hamburgerIcon.style.display = mobileOpen ? "none" : "block";
+    closeIcon.style.display = mobileOpen ? "block" : "none";
+    hamburger.setAttribute(
+      "aria-label",
+      mobileOpen ? "Fermer le menu" : "Ouvrir le menu"
+    );
   }
-}
-mediaQuery.addEventListener('change', reopenOnResize); // écoute les changements
 
+  function closeMobile() {
+    mobileOpen = false;
+    overlay.classList.remove("open");
+    drawer.classList.remove("open");
+    hamburgerIcon.style.display = "block";
+    closeIcon.style.display = "none";
+    hamburger.setAttribute("aria-label", "Ouvrir le menu");
+  }
 
-// Virtual Page loading
-function loadPage(page) {
-    document.querySelectorAll(".page").forEach(p => {
-        p.classList.remove("active");
+  hamburger.addEventListener("click", toggleMobile);
+  overlay.addEventListener("click", closeMobile);
+
+  /* --- Smooth scroll for nav links --- */
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      var targetId = this.getAttribute("href").replace("#", "");
+      var target = document.getElementById(targetId);
+      if (target) {
+        var isMobile = window.innerWidth < 1024;
+        var offset = isMobile ? 65 + 16 : 16;
+        var y =
+          target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+      closeMobile();
     });
-    document.getElementById(page).classList.add("active");
+  });
 
-    localStorage.setItem("page", page);
-    currentPage = page
+  /* --- Logo click scrolls to top --- */
+  document.querySelectorAll("[data-logo]").forEach(function (logo) {
+    logo.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      closeMobile();
+    });
+  });
 
-    updateActiveNav(page)
-}
+  /* --- Active section tracking on scroll --- */
+  function updateActiveSection() {
+    var scrollOffset = 120;
+    var current = "";
 
-// Theme switching
-const toggle = document.getElementById('theme-toggle');
+    sections.forEach(function (section) {
+      var top = section.getBoundingClientRect().top;
+      if (top <= scrollOffset) {
+        current = section.id;
+      }
+    });
 
-toggle.addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('theme-dark');
-    setTheme( isDark ? 'theme-dark' : 'theme-light')
+    navLinks.forEach(function (link) {
+      var href = link.getAttribute("href");
+      if (href === "#" + current) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveSection, { passive: true });
+  updateActiveSection();
 });
-
-function setTheme(themeName) {
-    document.body.className = themeName;
-    localStorage.setItem("theme", themeName);
-}
-
-
-// exécution initiale
-
-const savedTheme = localStorage.getItem("theme")|| "theme-dark";
-const savedLang = localStorage.getItem("lang") || "fr";
-const savedPage = localStorage.getItem("page") || "home";
-setTheme(savedTheme)
-setLanguage(savedLang); // langue par défaut au chargement
-loadPage(savedPage);
-handleResize(mediaQuery);

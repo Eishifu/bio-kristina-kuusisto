@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
 </head>
-<body>
+<body class="theme-light">
 
   <!-- ===== Mobile Header ===== -->
   <header class="mobile-header">
@@ -27,14 +27,30 @@
   <!-- ===== Mobile Drawer ===== -->
   <div id="mobile-drawer" class="mobile-drawer">
     <nav>
-      <a href="#cv" data-nav-link>Curriculum Vitae</a>
-      <a href="#presse" data-nav-link>Presse</a>
-      <a href="#media" data-nav-link>Media</a>
-      <a href="#enregistrements" data-nav-link>Enregistrements</a>
-      <a href="#projets" data-nav-link>Projets</a>
-      <a href="#concerts" data-nav-link>Concerts</a>
-      <a href="#contact" data-nav-link>Contact</a>
+      <a href="#cv" data-nav-link data-i18n="page_selector.cv">Curriculum Vitae</a>
+      <a href="#presse" data-nav-link data-i18n="page_selector.press">Presse</a>
+      <a href="#media" data-nav-link data-i18n="page_selector.medias">Media</a>
+      <a href="#enregistrements" data-nav-link data-i18n="page_selector.recordings">Enregistrements</a>
+      <a href="#projets" data-nav-link data-i18n="page_selector.projects">Projets</a>
+      <a href="#concerts" data-nav-link data-i18n="page_selector.concerts">Concerts</a>
+      <a href="#contact" data-nav-link data-i18n="page_selector.contact">Contact</a>
     </nav>
+    <div class="lang-switch">
+      <button onclick="setLanguage('fr')" aria-label="Français">
+          <img src="src/images/fr.png" alt="Français" data-lang="fr">
+      </button>
+
+      <button onclick="setLanguage('en')" aria-label="English">
+          <img src="src/images/en.png" alt="English" data-lang="en">
+      </button>
+
+      <button onclick="setLanguage('fi')" aria-label="Suomi">
+          <img src="src/images/fi.png" alt="Suomi" data-lang="fi">
+      </button>
+    </div>
+    <div>
+        <button class="theme-toggle" aria-label="Theme toogle"></button>
+    </div>
   </div>
 
   <!-- ===== Desktop Sidebar ===== -->
@@ -49,6 +65,23 @@
       <a href="#concerts" data-nav-link>Concerts</a>
       <a href="#contact" data-nav-link>Contact</a>
     </nav>
+
+    <div class="lang-switch">
+      <button onclick="setLanguage('fr')" aria-label="Français">
+          <img src="src/images/fr.png" alt="Français" data-lang="fr">
+      </button>
+
+      <button onclick="setLanguage('en')" aria-label="English">
+          <img src="src/images/en.png" alt="English" data-lang="en">
+      </button>
+
+      <button onclick="setLanguage('fi')" aria-label="Suomi">
+          <img src="src/images/fi.png" alt="Suomi" data-lang="fi">
+      </button>
+    </div>
+    <div>
+        <button class="theme-toggle" aria-label="Theme toogle"></button>
+    </div>
   </aside>
 
   <!-- ===== Main Content ===== -->
@@ -58,8 +91,61 @@
       <!-- ===== CV ===== -->
       <section id="cv">
         <h1>Curriculum Vitae</h1>
+        <p>
+            Kristina Kuusisto est une bandonéoniste de renommée internationale appréciée pour 
+            la finesse de ses interprétations. Diplomée de l’'Académie Sibélius en accordéon 
+            classique, elle étudie ensuite le bandonéon à l'’ENM de Gennevilliers sous la direction 
+            de Juan José Mosalini. Accordéoniste au Théâtre National de Finlande entre 1987 et 
+            1990, elle est jusqu’'en 1996 professeur d’'accordéon à l’'Ecole de Musique de 
+            Hämeenlinna et jusqu’'en 2001 professeur du bandonéon à l’'ENM de Gennevilliers à 
+            Paris.
+            Concertiste-soliste, elle est notamment accompagnée dans les concertos Tres 
+            Tangos et Aconcagua de Astor Piazzolla par l’'Orchestre des Pays de Savoie (France), 
+            l'’Aalborg Symfoniorkester (Danemark), le Pori Sinfonietta (Finlande) et le Staats 
+            Philharmonie Rheinland-Pfalz de Ludwigshafen (Allemagne), Norrköpings 
+            Symfoniorkester (Suede), Lappeenrannan Kaupunginorkesteri (Finlande) Hyvinkään 
+            Kaupunginorkesteri (Finlande), Keski-Pohjanmaan Kamariorkesteri (Finlande), 
+            Sinfonietta Lentua, Kuhmo ( Finlande).
+            Elle est artiste invitée de l’'Opera North (Angleterre), l’'Opera de Metz (France), 
+            l'Opera de Nancy (France), Theatre des Amandiers (France). Elle s'’est produite 
+            également au sein d’'ensembles de musiques vivantes ( 2e2m, S.i.c., Ars Nova, 
+            l’'ensemble FA, Le Banquet …). Aussi depuis une dizaine d’'années elle a participé à la 
+            création de nombreux spectacles et des operas contemporains : Cabaret 
+            contemporain de Mireille Laroche (Péniche-Opéra), La Confession Impudique de 
+            Bernard Cavanna (ARCAL), Forever Valley de Gérard Pesson (Théâtre des Amandiers 
+            de Nanterre), Le Clown de Neige de Sugeeta Fayolle/ Fribourgin, Tangonino de 
+            Hélène Bohy, Merci Douglas, bonsoir de Benjamin Hertz /Jacques Rebotier, ARCAL). 
+            Attention un train peut en cacher un autre (Lot Production, Belgia), Mahagonny de 
+            Kurt Weill, l'’Opera de Metz.Elle était membre fondatrice du quintet londonien Tango 
+            Volcano et du quintet breton Tango Nevez. Elle se produite en duo, Duo Dryades, 
+            avec la décacordiste Mari Mäntylä partout en Europe et aussi avec le guitariste Roger 
+            Eon, Duo Silb.
+            Elle a participé à de nombreux enregistrements pour les CDs, films et radios. Catching Fire -albumi Tango Volcano/Lontoo ; Kirmari-album avec Mari Mäntylä, Mayrecords, 
+            UK, Speira-album, Alba, Finlande, La Meneuse de Tortue d'or, Mayrecords, UK, La Chair du Désir Benjamin Herz/ Radio France/ Paris ; Forever Valley, CD de l’opera de Gerard 
+            Pesson/ Radio France ; Mon amie Emilie, Paul Mefano/ Waldteufel, Ensemble FA ; Astor Piazzollan Aconcagua concerto pour le bandonéon, Staats Philharmonie Rheinland
+            Pfalz, SWR2, Deutsch Radio, Aeterna concerto de Pekka Jalkanen, Yle 1,Radio Finlande, The Truth About Charlie, dir. Jonathan Demme / Universal ; Mies ilman menneisyyttä, 
+            ohj. Aki Kaurismäki/ Sputnik Oy (Grand Prix Cannes Festival 2002)....
+            Kristina et le Bandonéon
+            
+            "J’ai découvert le bandonéon à l’occasion de la Misa Tango", ecrit Françoise Tonnard, " Je ne 
+            soupçonnais pas son existence jusqu’à lors. C’est un instrument incroyable, un orchestre à lui 
+            tout seul ! Rien à voir avec l’accordéon, dont il est une version aboutie et très sophistiquée. Il 
+            met en jeu toute une gamme de sonorités très expressives, avec des colorations infiniment 
+            variées et subtiles : des coups de colères sombres aux trépidations fougueuses, du cri de joie à 
+            la plainte lascive, impossible de rester de bois tant il nous fait vibrer, tant il rencontre – pour ne 
+            pas dire percute – nos émotions. Cet instrument parle à tout le monde et il invite furieusement à 
+            la vie.
+            L’interprétation de Kristina Kuusisto y est certainement pour beaucoup dans ce coup de cœur. 
+            Elle est fascinante à regarder tant elle est dans sa musique, si attentive à la réponse de 
+            l’instrument quand elle le sollicite. Tant elle fait corps avec lui, au sens propre du terme, car elle 
+            l’accompagne physiquement dans une gestuelle amoureuse. Fascinante à écouter aussi car c’est 
+            un dialogue tellement intime qu’on ne peut que retenir son souffle et se laisser contaminer par la 
+            beauté irrésistible de cette époustouflante étreinte musicale."  
+                                                                                                                                                                              
+                                                              Françoise Tonnar
 
-        <div class="cv-block">
+        </p>
+        <!-- <div class="cv-block">
           <h2>Formation</h2>
           <div class="cv-entry">
             <p class="title">Titre du diplome</p>
@@ -109,7 +195,7 @@
             <span class="skill-tag">Competence 5</span>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <!-- ===== Presse ===== -->
       <section id="presse">

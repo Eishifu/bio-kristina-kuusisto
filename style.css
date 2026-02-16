@@ -2,6 +2,72 @@
    KK Portfolio - Pure CSS
    ========================================= */
 
+/* .theme-dark {
+    --general-bg: #0f0f0f;
+    --general-text: #eaeaea;
+    --general-accent: #331602;
+    --header-bg: #161313;
+    --nav-border:#f1000000;
+    --nav-border-active:#9e6f6f;
+    --nav-border-hover:#4b456d;
+    --nav-btn-bg: #2a2a2a00;
+    --nav-btn-bg2: #1a1a1a00;
+    --nav-btn-bg-hover: #2a2a2a;
+    --nav-btn-text: #ffffff;
+} */
+
+.theme-light {
+  --color-bg: #fafafa;
+  --color-fg: #1a1a1a;
+  --color-card: #ffffff;
+  --color-muted: #ededed;
+  --color-muted-fg: #717171;
+  --color-border: #e5e5e5;
+}
+.theme-dark {
+  --color-bg: #161313;
+  --color-fg: #fafafa;
+  --color-card: #161313;
+  --color-muted: #161313;
+  --color-muted-fg: #717171;
+  --color-border: #e5e5e5;
+}
+
+/*  Theme toogle */
+.theme-toggle {
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    border: none;
+    background-color: #ccc;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+/* État dark */
+body.theme-dark .theme-toggle {
+    background-color: #444;
+}
+
+body.theme-dark .theme-toggle::before {
+    transform: translateX(24px);
+    background-color: #ffdb70; /* petite couleur pour lune ou soleil */
+}
+
+
 /* --- Reset & Base --- */
 *,
 *::before,
@@ -12,12 +78,6 @@
 }
 
 :root {
-  --color-bg: #fafafa;
-  --color-fg: #1a1a1a;
-  --color-card: #ffffff;
-  --color-muted: #ededed;
-  --color-muted-fg: #717171;
-  --color-border: #e5e5e5;
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Cormorant Garamond', serif;
   --sidebar-width: 256px;
@@ -86,6 +146,36 @@ a {
   color: var(--color-fg);
   font-weight: 500;
 }
+
+.lang-switch {
+  margin-top: auto;
+}
+.lang-switch button {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.lang-switch img {
+    width: clamp(24px,2vw,40px);
+    height: clamp(18px,2vw,30px);
+    border-radius: 4px;
+}
+
+.lang-switch button:hover img {
+    transform: scale(1.1);
+}
+
+.lang-switch button:focus img{
+    outline: 2px solid #333;
+}
+
+.lang-switch img.active{
+    outline: 2px solid #333;
+    transform: scale(1.1);
+}
+
 
 /* --- Mobile Header --- */
 .mobile-header {
